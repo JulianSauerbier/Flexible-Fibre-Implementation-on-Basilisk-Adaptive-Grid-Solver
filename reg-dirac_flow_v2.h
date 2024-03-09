@@ -125,14 +125,6 @@ void eul2lag(lagfiber *fiber)
                         }
                 }
         }
-/**
-In case of parallel simulations, we communicate the Lagrangian velocity
-so that all processes have the same Lagrangian velocities.
-*/
-// #if _MPI
-//         if (mpi_npe > 1)
-//                 reduce_lagVel(fiber);
-// #endif
 }
 
 scalar stencils[];
@@ -178,22 +170,3 @@ void tag_ibm_stencils()
                 if (fbs.fb[k].isactive)
                         tag_ibm_stencils_one_fiber(&FB(k));
 }
-
-/**
-## References
-
-~~~bib
-@Article{Peskin1977,
-  author    = {Peskin, C.S.},
-  title     = {{Numerical analysis of blood flow in the heart}},
-  journal   = {Journal of Computational Physics},
-  year      = {1977},
-  volume    = {25},
-  number    = {3},
-  pages     = {220--252},
-  file      = {:files/Peskin1977 - Numerical Analysis of Blood Flow in the Heart.pdf:PDF},
-  groups    = {FluidSolid flows},
-  timestamp = {2013.07.18},
-}
-~~~
-*/
