@@ -46,7 +46,6 @@ lagrass fbs;
 #define FB(i) (fbs.fb[i])
 
 //useful macros
-
 #if dimension < 3
 #define STENCIL_SIZE 25
 #else
@@ -83,7 +82,7 @@ void initialize_fiber(lagfiber *fiber, int nfb)
         fiber->nodes = malloc(nlp * sizeof(FNode));
         fiber->D_s = (double) Lr / (nlp - 1.);
         fiber->isactive = true;
-//initial position
+        //initial position
         for (int i = 0; i < nlp; i++)
         {
                 fiber->nodes[i].post0.x = X0 + L0/2. + nfb;
@@ -112,7 +111,7 @@ void initialize_fiber(lagfiber *fiber, int nfb)
                 tag_ibm_stencils(&FB(nfb));
                 generate_lag_stencils_one_fiber(&FB(nfb));
         }
-        BC_CLAMP = false;		//fixed end BC
+        BC_CLAMP = false;	//fixed end BC
         GRAVITY = true;		//gravity on/off
 }
 
@@ -261,7 +260,6 @@ event Tensionpoisson(i++)
         }
 }
 
-//
 event advectfiber(i++, last)
 {       
         for (int nfb = 0; nfb < NFBS; nfb++)
