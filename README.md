@@ -1,2 +1,2 @@
 # Flexible-Fibre-Implementation-on-Basilisk-Adaptive-Grid-Solver
-This repository contains all files used for the flexible fibre implementation for the Basilisk adaptive grid solver.
+This repository contains all files used for the flexible fibre implementation for the Basilisk adaptive grid solver. It is part of my work for my Masters' project under supervision of Prof. (Bas) van de Wiel and Yi Dai at the "Fruitfrost" group at TU Delft. The basis of the code was provided by Yi Dai, after which it was tested by me and adapted to work on multiple fibres in upward position to resemble flexible grass.
